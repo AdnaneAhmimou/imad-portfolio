@@ -359,7 +359,7 @@ export default function Portfolio() {
       image: "/project2.png",
       details: "",
       link: "https://www.canva.com/design/DAGnDgZXnOc/EzWIQ3XWq3zrJE-ntVMLNg/edit?utm_content=DAGnDgZXnOc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
-      linkFrench: "https://www.canva.com/design/DAF3OXHvlWM/biCzORAqFWvVfIrCDG_HWg/edit",
+      linkFrench: "https://www.canva.com/design/DAF3OxE2N_8/u5Hq5FqSpgv47KLXxh1rYw/edit",
     },
     {
       id: 3,
@@ -368,7 +368,7 @@ export default function Portfolio() {
       image: "/project3.png",
       details: "",
       link: "https://www.canva.com/design/DAGm_idjS6o/DBRnPPehbQUIq43dO-7vGg/edit?utm_content=DAGm_idjS6o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
-      linkFrench: "https://www.canva.com/design/DAF3OxE2N_8/u5Hq5FqSpgv47KLXxh1rYw/edit",
+      linkFrench: "https://www.canva.com/design/DAF-9Z_aygM/rfPcITcSjrBUIMOYv4JlJw/edit",
     },
     {
       id: 4,
@@ -377,7 +377,7 @@ export default function Portfolio() {
       image: "/project4.png",
       details: "",
       link: "https://www.canva.com/design/DAGofUiEOR0/bk8_IF2Nks2hJyS6AK7qSA/edit",
-      linkFrench: "https://www.canva.com/design/DAF-9Z_aygM/rfPcITcSjrBUIMOYv4JlJw/edit",
+      linkFrench: "",
     },
   ]
 
