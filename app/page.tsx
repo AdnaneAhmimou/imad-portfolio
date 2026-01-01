@@ -376,7 +376,7 @@ export default function Portfolio() {
       description: "",
       image: "/project4.png",
       details: "",
-      link: "https://www.canva.com/design/DAGofUiEOR0/bk8_IF2Nks2hJyS6AK7qSA/edit",
+      link: "https://www.canva.com/design/DAF3OXHvlWM/biCzORAqFWvVfIrCDG_HWg/edit",
       linkFrench: "",
     },
   ]
