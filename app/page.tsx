@@ -1,24 +1,23 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
-import type { FormEvent } from "react"
+
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Card, CardDescription } from "@/components/ui/card"
 
-import { Badge } from "@/components/ui/badge"
+
+
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog"
 import {
   Mail,
   Download,
   Zap,
-  Lightbulb,
-  CheckCircle,
+
   ChevronDown,
   GraduationCap,
   Briefcase,
   Linkedin,
-  Github,
+
   Instagram,
   Globe,
   Copy,
@@ -576,10 +575,7 @@ export default function Portfolio() {
                   <div className="absolute inset-0 bg-blue-500 rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity"></div>
                   <Linkedin className="w-6 h-6 text-slate-400 group-hover:text-blue-600 transition-colors relative z-10" />
                 </a>
-                <a href="https://github.com/imad-cherradi" target="_blank" rel="noopener noreferrer" className="group relative">
-                  <div className="absolute inset-0 bg-slate-900 rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity"></div>
-                  <Github className="w-6 h-6 text-slate-400 group-hover:text-slate-900 transition-colors relative z-10" />
-                </a>
+
                 <a href="https://www.instagram.com/imad960" target="_blank" rel="noopener noreferrer" className="group relative">
                   <div className="absolute inset-0 bg-pink-500 rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity"></div>
                   <Instagram className="w-6 h-6 text-slate-400 group-hover:text-pink-600 transition-colors relative z-10" />
@@ -861,7 +857,7 @@ export default function Portfolio() {
               {/* Socials Grid */}
               <div className="space-y-3">
                 <span className="text-xs font-bold text-slate-400 uppercase tracking-widest pl-1">{t.contact.socialLabel}</span>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4">
                   <a
                     href="https://linkedin.com/in/imad-cherradi"
                     target="_blank"
@@ -870,16 +866,6 @@ export default function Portfolio() {
                   >
                     <Linkedin className="w-5 h-5 text-blue-700" />
                     <span className="font-medium text-slate-700 group-hover:text-blue-700">LinkedIn</span>
-                    <ExternalLink className="w-3 h-3 ml-auto text-slate-400 opacity-0 group-hover:opacity-100 transition-all" />
-                  </a>
-                  <a
-                    href="https://github.com/imad-cherradi"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-200 hover:border-slate-800 hover:shadow-md transition-all group"
-                  >
-                    <Github className="w-5 h-5 text-slate-700" />
-                    <span className="font-medium text-slate-700 group-hover:text-slate-900">GitHub</span>
                     <ExternalLink className="w-3 h-3 ml-auto text-slate-400 opacity-0 group-hover:opacity-100 transition-all" />
                   </a>
                 </div>
