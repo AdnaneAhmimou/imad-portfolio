@@ -377,15 +377,24 @@ export default function Portfolio() {
       link: "https://www.canva.com/design/DAGm_idjS6o/DBRnPPehbQUIq43dO-7vGg/edit?utm_content=DAGm_idjS6o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
       linkFrench: "https://www.canva.com/design/DAF-9Z_aygM/rfPcITcSjrBUIMOYv4JlJw/edit",
     },
-    {
+    ...(language === "fr" ? [{
       id: 4,
-      title: language === "fr" ? t.projects.items[3].titleFr : t.projects.items[3].title,
+      title: t.projects.items[3].titleFr,
       description: "",
       image: "/image.png",
       details: "",
       link: "https://www.canva.com/design/DAF3OXHvlWM/biCzORAqFWvVfIrCDG_HWg/edit",
       linkFrench: "",
-    },
+    }] : []),
+    ...(language === "de" ? [{
+      id: 5,
+      title: "Wie stellt man Beton her?",
+      description: "",
+      image: "/project4.png",
+      details: "",
+      link: "https://www.canva.com/design/DAGofUiEOR0/bk8_IF2Nks2hJyS6AK7qSA/edit",
+      linkFrench: "",
+    }] : []),
   ]
 
   const scrollToSection = (sectionId: string) => {
@@ -788,11 +797,7 @@ export default function Portfolio() {
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent z-10"></div>
 
                       {/* Project Number Badge */}
-                      <div className="absolute top-4 left-4 z-20">
-                        <div className="w-10 h-10 rounded-lg bg-white/90 backdrop-blur-sm border border-blue-200 flex items-center justify-center shadow-lg">
-                          <span className="font-bold text-blue-600 font-mono text-sm">{proj.id.toString().padStart(2, '0')}</span>
-                        </div>
-                      </div>
+
                     </div>
                   )}
 

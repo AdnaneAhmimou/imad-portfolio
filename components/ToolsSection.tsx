@@ -17,7 +17,7 @@ const tools: Tool[] = [
     },
     {
         name: "TIA V16",
-        icon: "/tiav16.jfif",
+        icon: "/tiav16.png",
         categoryKey: "automation",
     },
     {
