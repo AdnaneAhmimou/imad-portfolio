@@ -594,10 +594,7 @@ export default function Portfolio() {
                   <Linkedin className={`w-6 h-6 text-slate-400 group-hover:text-${themeColor}-600 transition-colors relative z-10`} />
                 </a>
 
-                <a href="https://www.instagram.com/imad960" target="_blank" rel="noopener noreferrer" className="group relative">
-                  <div className="absolute inset-0 bg-pink-500 rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity"></div>
-                  <Instagram className="w-6 h-6 text-slate-400 group-hover:text-pink-600 transition-colors relative z-10" />
-                </a>
+
               </div>
             </div>
 
