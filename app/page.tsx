@@ -113,7 +113,7 @@ const translations = {
     },
     // Projects Section
     projects: {
-      title: "Projets Sélectionnés",
+      title: "Projets & Réalisations",
       subtitle:
         "Découvrez une sélection de mes projets d'ingénierie qui démontrent l'innovation, l'expertise technique et la résolution pratique de problèmes.",
       items: [
@@ -245,7 +245,7 @@ const translations = {
     },
     // Projects Section
     projects: {
-      title: "Ausgewählte Projekte",
+      title: "Projekte & Referenzen",
       subtitle:
         "Entdecken Sie eine Auswahl meiner Ingenieursprojekte, die Innovation, technische Expertise und praktische Problemlösung demonstrieren.",
       items: [
