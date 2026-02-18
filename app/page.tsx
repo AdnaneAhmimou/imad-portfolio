@@ -19,7 +19,6 @@ import {
   Briefcase,
   Linkedin,
 
-  Instagram,
   Globe,
   Copy,
   Check,
@@ -247,7 +246,7 @@ const translations = {
     projects: {
       title: "Projekte & Referenzen",
       subtitle:
-        "Entdecken Sie eine Auswahl meiner Ingenieursprojekte, die Innovation, technische Expertise und praktische Problemlösung demonstrieren.",
+        "Sie entdecken eine Auswahl meiner Ingenieursprojekte, die Innovation, technische Expertise und praktische Problemlösung demonstrieren.",
       items: [
         {
           title: "Ein Automatisierungsprüfstand",
@@ -405,7 +404,8 @@ export default function Portfolio() {
   }
 
   const handleDownloadPortfolio = () => {
-    window.open("/IMAD CHERRADI (CV).pdf", "_blank")
+    const resumeFile = language === "fr" ? "/IMAD CHERRADI (CV).pdf" : "/IMAD CHERRADI (Lebenslauf).pdf"
+    window.open(resumeFile, "_blank")
   }
 
   const toggleLanguage = () => {
