@@ -19,6 +19,7 @@ import {
   Briefcase,
   Linkedin,
 
+  Cpu,
   Globe,
   Copy,
   Check,
@@ -66,6 +67,7 @@ const translations = {
         "Je suis Imad Cherradi, étudiant en licence en Génie Électrique et Systèmes d'Automatisation (GESA). Je suis actuellement à la recherche d'un stage et suis très motivé pour mettre mes compétences au service de votre entreprise afin de contribuer à la mise en œuvre de normes.",
       education: "Formation",
       experience: "Expérience",
+      skills: "Compétences",
       certifications: "Certifications",
       educationItems: [
         {
@@ -107,6 +109,14 @@ const translations = {
           position: "Stage dans un atelier de bobinage en tant qu'opérateur",
           company: "Rabat, Octobre - Novembre 2019",
         },
+      ],
+      skillsItems: [
+        "Programmation et mise en service d’automates (PLC) en Ladder et Grafcet.",
+        "Supervision (SCADA), interfaces IHM et communication entre équipements industriels.",
+        "Bases des communications et protocoles industriels.",
+        "Étude et dimensionnement des réseaux BT/MT.",
+        "Commande, protection et variation de vitesse des moteurs électriques.",
+        "Conception et analyse des circuits logiques et systèmes numériques.",
       ],
       certificationsList: ["Licence PE", "LEED AP", "PMI-PMP", "Certifié NEC"],
     },
@@ -162,6 +172,9 @@ const translations = {
         availabilityTitle: "Disponibilité pour les Projets",
         availabilityStatus: "Actuellement disponible pour des projets de conseil",
         downloadResume: "Télécharger mon CV",
+        certLabel: "Certificats de Langue",
+        osdCert: "Certificat ÖSD (Allemand)",
+        tcfCert: "Certificat TCF (Français)",
       },
     },
     // Footer
@@ -198,6 +211,7 @@ const translations = {
         "Ich bin Imad Cherradi, Bachelorstudent in Elektrotechnik und Automatisierungssystemen (GESA). Ich bin derzeit auf der Suche nach einem Praktikum und bin sehr motiviert, meine Fähigkeiten in den Dienst Ihres Unternehmens zu stellen, um zur Umsetzung von Standards beizutragen.",
       education: "Formationen",
       experience: "Erfahrung",
+      skills: "Kompetenzen",
       certifications: "Zertifizierungen",
       educationItems: [
         {
@@ -239,6 +253,14 @@ const translations = {
           position: "Praktikum in einer Spule Werkstatt als Bediener",
           company: "Rabat, Oktober - November 2019",
         },
+      ],
+      skillsItems: [
+        "Programmierung und Inbetriebnahme von speicherprogrammierbaren Steuerungen (SPS) in Ladder und Grafcet.",
+        "Überwachung (SCADA), HMI-Schnittstellen und Kommunikation zwischen Industrieanlagen.",
+        "Grundlagen der industriellen Kommunikation und Kommunikationsprotokolle.",
+        "Analyse und Dimensionierung von Niederspannungs- und Mittelspannungsnetzen.",
+        "Steuerung, Schutz und Drehzahlregelung von Elektromotoren.",
+        "Entwurf und Analyse von Logikschaltungen und digitalen Systemen.",
       ],
       certificationsList: ["PE-Lizenz", "LEED AP", "PMI-PMP", "NEC-zertifiziert"],
     },
@@ -293,8 +315,11 @@ const translations = {
         phoneValue: "+212 123-456-789",
         connectTitle: "Verbinden Sie sich mit mir",
         availabilityTitle: "Verfügbarkeit für Projekte",
-        availabilityStatus: "Derzeit verfügbar für Beratungsprojekte",
+        availabilityStatus: "Derzeit verfügbar für Beratungsprojekt",
         downloadResume: "Meinen Lebenslauf herunterladen",
+        certLabel: "Sprachzertifikate",
+        osdCert: "ÖSD-Zertifikat (Deutsch)",
+        tcfCert: "TCF-Zertifikat (Französisch)",
       },
     },
     // Footer
@@ -313,7 +338,7 @@ export default function Portfolio() {
   const [language, setLanguage] = useState<"fr" | "de">("fr")
 
   const [copied, setCopied] = useState(false)
-  const [activeTab, setActiveTab] = useState<"education" | "experience">("education")
+  const [activeTab, setActiveTab] = useState<"education" | "experience" | "skills">("education")
   const [currentTime, setCurrentTime] = useState<string>("")
 
   // Dynamic Theme Color
@@ -371,7 +396,7 @@ export default function Portfolio() {
       id: 3,
       title: language === "fr" ? t.projects.items[2].titleFr : t.projects.items[2].title,
       description: "",
-      image: "/project3.png",
+      image: language === "fr" ? "/frenchproject3.png" : "/project3.png",
       details: "",
       link: "https://www.canva.com/design/DAGm_idjS6o/DBRnPPehbQUIq43dO-7vGg/edit?utm_content=DAGm_idjS6o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
       linkFrench: "https://www.canva.com/design/DAF-9Z_aygM/rfPcITcSjrBUIMOYv4JlJw/edit",
@@ -587,15 +612,7 @@ export default function Portfolio() {
                 </Button>
               </div>
 
-              {/* Social Media Links - Tech Style */}
-              <div className="flex items-center gap-6 border-t border-slate-200 pt-8">
-                <a href="https://www.linkedin.com/in/imad-cherradi-0352a021a/" target="_blank" rel="noopener noreferrer" className="group relative">
-                  <div className={`absolute inset-0 bg-${themeColor}-500 rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity`}></div>
-                  <Linkedin className={`w-6 h-6 text-slate-400 group-hover:text-${themeColor}-600 transition-colors relative z-10`} />
-                </a>
 
-
-              </div>
             </div>
 
             {/* Right side - Holographic Image Frame */}
@@ -680,6 +697,16 @@ export default function Portfolio() {
                 {/* Animated underline */}
                 <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r ${language === 'fr' ? 'from-blue-500 to-cyan-500' : 'from-teal-500 to-emerald-500'} transition-all ${activeTab === 'experience' ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`}></div>
               </button>
+
+              <button
+                onClick={() => setActiveTab('skills')}
+                className={`group pb-2 md:pb-4 text-lg md:text-2xl font-bold tracking-wide transition-all flex items-center gap-2 md:gap-4 relative ${activeTab === 'skills' ? `text-${themeColor}-600` : 'text-slate-400 hover:text-slate-600'}`}
+              >
+                <Cpu className="w-7 h-7" />
+                <span>{t.about.skills}</span>
+                {/* Animated underline */}
+                <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r ${language === 'fr' ? 'from-blue-500 to-cyan-500' : 'from-teal-500 to-emerald-500'} transition-all ${activeTab === 'skills' ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`}></div>
+              </button>
             </div>
 
             {/* Console Body - Enhanced */}
@@ -715,7 +742,7 @@ export default function Portfolio() {
                     </div>
                   ))}
                 </div>
-              ) : (
+              ) : activeTab === 'experience' ? (
                 <div className="space-y-6 animate-fadeInUp relative z-10">
                   {t.about.experienceItems.map((item, index) => (
                     <div key={index} className={`group relative pl-10 border-l-2 border-${themeColor}-200 hover:border-${themeColor}-500 transition-all pb-2`}>
@@ -729,6 +756,23 @@ export default function Portfolio() {
                       <div className="flex flex-col gap-1 mb-2">
                         <h4 className={`font-bold font-sans text-slate-900 text-lg group-hover:text-${themeColor}-600 transition-colors`}>{item.position}</h4>
                         <p className="text-slate-500 font-medium">{item.company}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="space-y-6 animate-fadeInUp relative z-10">
+                  {t.about.skillsItems.map((skill, index) => (
+                    <div key={index} className={`group relative pl-10 border-l-2 border-${themeColor}-200 hover:border-${themeColor}-500 transition-all pb-2`}>
+                      {/* Enhanced circuit node */}
+                      <div className={`absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-gradient-to-br ${language === 'fr' ? 'from-blue-500 to-cyan-500' : 'from-teal-500 to-emerald-500'} border-2 border-white shadow-lg group-hover:scale-125 transition-transform`}>
+                        <div className={`absolute inset-0 rounded-full bg-${themeColor}-400 animate-ping opacity-75`}></div>
+                      </div>
+                      {/* Power line indicator */}
+                      <div className={`absolute -left-[5px] top-8 w-2 h-2 bg-${language === 'fr' ? 'cyan' : 'emerald'}-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-lg shadow-${language === 'fr' ? 'cyan' : 'emerald'}-400/50`}></div>
+
+                      <div className="flex flex-col gap-1 mb-2">
+                        <p className="text-slate-700 font-medium text-lg leading-relaxed">{skill}</p>
                       </div>
                     </div>
                   ))}
@@ -881,6 +925,38 @@ export default function Portfolio() {
                     <Linkedin className={`w-5 h-5 text-${themeColor}-700`} />
                     <span className={`font-medium text-slate-700 group-hover:text-${themeColor}-700`}>LinkedIn</span>
                     <ExternalLink className="w-3 h-3 ml-auto text-slate-400 opacity-0 group-hover:opacity-100 transition-all" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Language Certificates */}
+              <div className="space-y-3 pt-2">
+                <span className="text-xs font-bold text-slate-400 uppercase tracking-widest pl-1">{t.contact.info.certLabel}</span>
+                <div className="grid grid-cols-1 gap-3">
+                  <a
+                    href="/ÖSD Zertifikat.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center gap-3 p-3.5 rounded-xl bg-white border border-slate-200 hover:border-${themeColor}-400 hover:shadow-md transition-all group`}
+                  >
+                    <div className={`p-2 rounded-lg bg-${themeColor}-50 text-${themeColor}-600 group-hover:bg-${themeColor}-600 group-hover:text-white transition-colors`}>
+                      <Globe className="w-4 h-4" />
+                    </div>
+                    <span className="text-sm font-medium text-slate-700 group-hover:text-slate-900">{t.contact.info.osdCert}</span>
+                    <Download className={`w-4 h-4 ml-auto text-slate-300 group-hover:text-${themeColor}-500 transition-colors`} />
+                  </a>
+
+                  <a
+                    href="/tcf.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center gap-3 p-3.5 rounded-xl bg-white border border-slate-200 hover:border-${themeColor}-400 hover:shadow-md transition-all group`}
+                  >
+                    <div className={`p-2 rounded-lg bg-${themeColor}-50 text-${themeColor}-600 group-hover:bg-${themeColor}-600 group-hover:text-white transition-colors`}>
+                      <Globe className="w-4 h-4" />
+                    </div>
+                    <span className="text-sm font-medium text-slate-700 group-hover:text-slate-900">{t.contact.info.tcfCert}</span>
+                    <Download className={`w-4 h-4 ml-auto text-slate-300 group-hover:text-${themeColor}-500 transition-colors`} />
                   </a>
                 </div>
               </div>
